@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" font-family="Consolas, Menlo, monospace" font-size="13px">
+<rect x="0.5" y="0.5" width="839" height="499" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+<text x="25" y="45" fill="#57606a" xml:space="preserve">            .::-===+++++===-:.</text>
+<text x="25" y="60" fill="#57606a" xml:space="preserve">         .-==++=============++=-:</text>
+<text x="25" y="75" fill="#57606a" xml:space="preserve">       :=+======================++-</text>
+<text x="25" y="90" fill="#57606a" xml:space="preserve">     .=+=========================+--:</text>
+<text x="25" y="105" fill="#57606a" xml:space="preserve">    .+==+==--==++=========++====*:  ::</text>
+<text x="25" y="120" fill="#57606a" xml:space="preserve">   .+=+-.      .:=++=+===+-:==+++  . ::</text>
+<text x="25" y="135" fill="#57606a" xml:space="preserve">   =++.           .=---==:....-:- .-= -</text>
+<text x="25" y="150" fill="#57606a" xml:space="preserve">   ++:       .-=-   :-......:...- +-%..</text>
+<text x="25" y="165" fill="#57606a" xml:space="preserve">   ++        +  #*   .-..:--:---- %@@..</text>
+<text x="25" y="180" fill="#57606a" xml:space="preserve">   ++.       %+=%@-   .---.....-= =@* -</text>
+<text x="25" y="195" fill="#57606a" xml:space="preserve">   .*=       =@@%@+    :+.......=  : ::</text>
+<text x="25" y="210" fill="#57606a" xml:space="preserve">    .*=       =%@%:     ==--:--=-   :.</text>
+<text x="25" y="225" fill="#57606a" xml:space="preserve">      =+-.     .:        .:::::.  ::</text>
+<text x="25" y="240" fill="#57606a" xml:space="preserve">       .-=--.                  .=:</text>
+<text x="25" y="255" fill="#57606a" xml:space="preserve">         .=**+==-::......::--=++++.</text>
+<text x="25" y="270" fill="#57606a" xml:space="preserve">     :--=++=:=+=++++++++=+*++=====*</text>
+<text x="25" y="285" fill="#57606a" xml:space="preserve">   *+*#*+=:...=+========++:-===+++--</text>
+<text x="25" y="300" fill="#57606a" xml:space="preserve">   :+**=:....:::-==++++=-.....=--+.:-</text>
+<text x="25" y="315" fill="#57606a" xml:space="preserve">     ++......=:...-:. .-:....:-  +-.=</text>
+<text x="25" y="330" fill="#57606a" xml:space="preserve">     -......=:...-:    .=....:- .=- -:</text>
+<text x="25" y="345" fill="#57606a" xml:space="preserve">    --.....=:....:-.  .-:.....:::==.=.</text>
+<text x="25" y="360" fill="#57606a" xml:space="preserve">    -:...:=:.......::::.........-:.-:</text>
+<text x="25" y="375" fill="#57606a" xml:space="preserve">    -:.:-:-...................:-:</text>
+<text x="25" y="390" fill="#57606a" xml:space="preserve">    .-::  .=---::::::::::::::---:.</text>
+<text x="25" y="405" fill="#57606a" xml:space="preserve">         :=-.:-=....:::..:---:::==.</text>
+<text x="25" y="420" fill="#57606a" xml:space="preserve">         .==:-=:</text>
+<text x="390" y="50" xml:space="preserve"><tspan fill="#0969da">nhhthong@github </tspan><tspan fill="#afb8c1">──────────────────────────────────────</tspan></text>
+<text x="390" y="92" xml:space="preserve"><tspan fill="#953800">OS: </tspan><tspan fill="#afb8c1">..................................... </tspan><tspan fill="#24292f">Linux, macOS</tspan></text>
+<text x="390" y="113" xml:space="preserve"><tspan fill="#953800">Uptime: </tspan><tspan fill="#afb8c1">.................. </tspan><tspan fill="#24292f">29 years, 5 months, 27 days</tspan></text>
+<text x="390" y="134" xml:space="preserve"><tspan fill="#953800">Kernel: </tspan><tspan fill="#afb8c1">................... </tspan><tspan fill="#24292f">Senior Full-stack Engineer</tspan></text>
+<text x="390" y="155" xml:space="preserve"><tspan fill="#953800">IDE: </tspan><tspan fill="#afb8c1">......................... </tspan><tspan fill="#24292f">Cursor, VS Code, GoLand</tspan></text>
+<text x="390" y="197" xml:space="preserve"><tspan fill="#953800">Languages.Backend: </tspan><tspan fill="#afb8c1">.................. </tspan><tspan fill="#24292f">Go, PHP, Node.js</tspan></text>
+<text x="390" y="218" xml:space="preserve"><tspan fill="#953800">Languages.Frontend: </tspan><tspan fill="#afb8c1">.. </tspan><tspan fill="#24292f">React.js, React Native, Flutter</tspan></text>
+<text x="390" y="239" xml:space="preserve"><tspan fill="#953800">Languages.Real: </tspan><tspan fill="#afb8c1">.................. </tspan><tspan fill="#24292f">Vietnamese, English</tspan></text>
+<text x="390" y="281" xml:space="preserve"><tspan fill="#0969da">─ Contact </tspan><tspan fill="#afb8c1">────────────────────────────────────────────</tspan></text>
+<text x="390" y="302" xml:space="preserve"><tspan fill="#953800">LinkedIn: </tspan><tspan fill="#afb8c1">................................ </tspan><tspan fill="#24292f">in/nhhthong</tspan></text>
+<text x="390" y="344" xml:space="preserve"><tspan fill="#0969da">─ GitHub Stats </tspan><tspan fill="#afb8c1">───────────────────────────────────────</tspan></text>
+<text x="390" y="365" xml:space="preserve"><tspan fill="#953800">Repos: </tspan><tspan fill="#afb8c1">... </tspan><tspan fill="#24292f">6 {Contributed: 1}</tspan><tspan fill="#afb8c1"> | </tspan><tspan fill="#953800">Stars: </tspan><tspan fill="#afb8c1">............. </tspan><tspan fill="#24292f">2</tspan></text>
+<text x="390" y="386" xml:space="preserve"><tspan fill="#953800">Commits: </tspan><tspan fill="#afb8c1">................. </tspan><tspan fill="#24292f">85</tspan><tspan fill="#afb8c1"> | </tspan><tspan fill="#953800">Followers: </tspan><tspan fill="#afb8c1">......... </tspan><tspan fill="#24292f">0</tspan></text>
+<text x="390" y="407" xml:space="preserve"><tspan fill="#953800">Lines of Code: </tspan><tspan fill="#24292f">12,450</tspan><tspan fill="#afb8c1"> ( </tspan><tspan fill="#1a7f37">14,200++</tspan><tspan fill="#afb8c1">, </tspan><tspan fill="#cf222e">1,750--</tspan><tspan fill="#afb8c1"> )</tspan></text>
+</svg>
