@@ -12,35 +12,121 @@ from datetime import date, datetime, timezone
 USER = "nhhthong"
 BIRTHDAY = date(1997, 3, 14)
 JOINED_YEAR = 2019  # account creation year
+ART_FS, ART_LH, ART_Y = 6, 7, 78  # art font size, line height, first baseline (px)
 W = 54  # info column width in characters
 
+# Mudkip (PokeAPI official-artwork/258.png) pre-rendered to coloured ASCII.
+# ART = glyphs, ART_COLORS = same grid of ART_PALETTE keys (space = transparent).
+ART_PALETTE = {'a': '#c4c7cf', 'b': '#c3c7d1', 'c': '#c3c7d0', 'd': '#c3c7cf', 'e': '#c2c7d1', 'f': '#bfc5d0', 'g': '#bec2cd', 'h': '#b7c0d6', 'i': '#b9becb', 'j': '#b3bed8', 'k': '#b5b9c0', 'l': '#abbed0', 'm': '#94c5e0', 'n': '#7dc1e4', 'o': '#7bbfe3', 'p': '#7bbfe2', 'q': '#7abfe2', 'r': '#7bbfe1', 's': '#7abde1', 't': '#73bce1', 'u': '#67b6de', 'v': '#5eb5df', 'w': '#5cb3de', 'x': '#58b5e1', 'y': '#59b3de', 'z': '#57b2dd', 'A': '#56b2dd', 'B': '#55b3de', 'C': '#55b2de', 'D': '#55b2dd', 'E': '#e9ad6c', 'F': '#eca75e', 'G': '#eca14c', 'H': '#ec9e44', 'I': '#ec9e40', 'J': '#eb9d42', 'K': '#e99c45', 'L': '#e89a44', 'M': '#e99b42', 'N': '#b6a79b', 'O': '#90a3b4', 'P': '#59b1db', 'Q': '#60a7cb', 'R': '#50a8d3', 'S': '#4aa4cf', 'T': '#4a9ec6', 'U': '#dd9142', 'V': '#b58653', 'W': '#7a8b9a', 'X': '#528daa', 'Y': '#8c6a45', 'Z': '#515253', '0': '#4c4d4d', '1': '#4b4845', '2': '#4397c3', '3': '#458fb4', '4': '#4081a1', '5': '#3f6071', '6': '#464849', '7': '#444241', '8': '#3d4143', '9': '#364147'}
 ART = r"""
-            .::-===+++++===-:.
-         .-==++=============++=-:
-       :=+======================++-
-     .=+=========================+--:
-    .+==+==--==++=========++====*:  ::
-   .+=+-.      .:=++=+===+-:==+++  . ::
-   =++.           .=---==:....-:- .-= -
-   ++:       .-=-   :-......:...- +-%..
-   ++        +  #*   .-..:--:---- %@@..
-   ++.       %+=%@-   .---.....-= =@* -
-   .*=       =@@%@+    :+.......=  : ::
-    .*=       =%@%:     ==--:--=-   :.
-      =+-.     .:        .:::::.  ::
-       .-=--.                  .=:
-         .=**+==-::......::--=++++.
-     :--=++=:=+=++++++++=+*++=====*
-   *+*#*+=:...=+========++:-===+++--
-   :+**=:....:::-==++++=-.....=--+.:-
-     ++......=:...-:. .-:....:-  +-.=
-     -......=:...-:    .=....:- .=- -:
-    --.....=:....:-.  .-:.....:::==.=.
-    -:...:=:.......::::.........-:.-:
-    -:.:-:-...................:-:
-    .-::  .=---::::::::::::::---:.
-         :=-.:-=....:::..:---:::==.
-         .==:-=:
+                                 @=++@+=@
+                              @*#####*+##*=
+                            =@###*****@*****@
+                           +%#+*******@******@
+                          @##*@*******@******+
+                         @##**@*******@*******@
+                        @##***++******@*******@
+                        @##****@******@*******+
+                        @##****@******@*******+@
+                        *#*****@******@*******+
+                        ##*****+******+*******+
+                        *#******+*****+*******@
+                        @#******@*****++******@
+                        @#******@*****++******@
+                        @##*****@*****++******@
+                         @#*****++****++*****@
+                         @#******+****++*****@
+                         @##*****@****+******@
+                          @#*****@****+*****@
+                         @@#*****+****+******+=@
+                      @+*#@*#*****+**************+@
+                   @+######@#*****+*****************=@
+                 @*########@*#************************+@
+               @*###########@#**************************@
+             @+#############*@#**************************+@
+            @*##################***************************@                          @+*##%%%%#~
+           @*####################*************************#*@                     @=*%%%%%%%%%%%%@
+          @***########################*****************#*****                  ~+#%%%%%%%%%%%%%%%@
+          @****######*#+##############***************+*+****+@               +#%%%%%%%%%%%%%%%%%%@
+         @*@*****###@#%@+###########*@%#@**********+*########@             +%%%%%%%%%%%%%%%%####*
+ +#*+=@ @*##+******+@@@@@###########@@%#@********+*###########@          +#%%%%%%%%%%%%#####%%%%@
+  *####*@####@*****@@@@@+***********@@@@@******+*#############@     @=+@#%%%%%%%%%%#*##%%%%%%%%@
+   *####@#####@+****@@@+************@@@@@*****@*############*+@=+*####@#%%%%%%%%#*#%%%%%%%%%%%@
+   @*###*######+*********************@@+*****@#############*########*@#%%%%%%%##%%%%%%%%%%%%%@
+    @###########@***************************@#####################**@%%%%%%###%%%%%%%%%%%%%%@
+   =############*+************+************+*####################*+*%%%%%#*#%%%%%%%%%%%%%%%@
+  @########+#####@**********++++***********@######################+#%%%%*#%%%%%%%%%%%%%%%%@
+ @##########+*####@%%%%%%%%%%%%%##****++**@########################+*%*#%%%%%%%%%%%%%%%%#@
+      @@@####++*##+#%%%%%%%%%%%%%%%%%%%%##@#########################+@###%%%%%%%%%%%%%%*@
+         +###*@@@**@%%%%%%%%%%%%%%%%%%%%%%@*########***######********@#######%%%%%%%%%@
+          *#+@    @@#%%%%%%%%%%%%%%%%%%%%%%@####****+@@*####+@@@+++@*############%%%*@
+           @         @=*##%%%%%%%%%%%%%%%%%#+**++@++***@+##*@+++++++@#############*@
+                        ++++*@##########***+@@++********+@*@*++++++*@########****@
+                        @*****@############@**************+**++++++*@*******###@
+                         @#****++###########++***************+@++++*@#######*=
+                         @###****++*#########@*************+*@++++++*#####+@
+                          @######***+@=+*####+****#####***+@@+++++*@###@@
+                          @########**@       @#########***@@++++++@@@
+                          @#*######*@        @##########*+@++++++@
+                          @#@##@*#=@         @#########*+@@@+*@+@
+                          @@++@@@           @##*######*@   @@@
+                                            @#@*#**#*=@
+                                             @@++@=@
+"""
+ART_COLORS = """
+                                 5WWW8WW5
+                              6OhlntuQXutQX
+                            58lmuyAzzz8AAzwu0
+                           Ohm4yAAzzzx8Pyyzzv0
+                          7lnv4BCDzwwv5wwwzzA3
+                         6mnvz9xADywwv9vwwyADx0
+                        0mmuyD33Dzwwwv9vwwwzDD0
+                        0mqwAAx9zywwww6vwwyADA4
+                        6muyDDB9vwwwww8vyzADDA3Z
+                        OmuzADD8vwwwww9PAAzDDD3
+                        OmvzDCD4Twwwww4SDzDDDD4
+                        OmvADDDS4wwwww4TDDDDDD6
+                        ZmvADDDx8wwwww33DDDDDDZ
+                        0mvDDDDy9ywwwy33DDDDDx6
+                        0mtDDDDD9PwwyA33DDDDDR6
+                         8nADDDD32wyAC33DDDDD8
+                         6mwDDDDD4zDDC32DDDDy6
+                         0nuzDDDx8BDDD3TDCDDR0
+                          6tvADDD8xDDD3RDDDA0
+                         96ouzDDD3TDDD4DDDDCR345
+                      5Xun6QtyDDDA4DDDRCDDDDDDADD45
+                   5Xrpppps0tvDDDB3CCDDDDDDDCDDDDDAP49
+                 6Qmmmmnppo8uuyDDDRCDDDDDDDDDDDDDDDDzvX9
+               6Qmmmmmmnppps6tvyDDDDDDDDDDDDDDDDDDDDDAyv6
+             0Xonmmmmnopppppu8tvzDDDDDDDDDDDDDDDDDDCywwwvXZ
+            ZQsppnnopppppppppsstuwADDDDDCDDDDDDDDDDAvuuuuuQZ                          ZWNkigaaai5
+           0RusppppppppppppppppptuvyyvuvzDDDDDDDDDDCyuuuuuuQ0                     7WNaacccccccccg0
+          ZTzvuspppppprppppppppppqtqqtuADDDDDDDDDDDDDwuuwQQuX                  ZWkaacccccccccccca0
+          6BDAwutqppsWOXopppppppppppqtPCDDDDDDDDDDDARXWVUUUVY6               WkaccccccccccccccccaZ
+         0U7RDDyvuts0ka6XpppppppppppQ8gk7BDDDDDDDCTWVGGFFGGJH1             WgdcccccccccccadgkkkkO
+ VGUVYY 1UGHYTDDAyv4ZZ006sqqqqqstttu0Zgk0TDDCDDDSWUFEEEEEEEGJH0          WgaccccccccacdkkkkidaadZ
+  VIIJLU1EEGL82AADD6Z0773vvvvvvvwwyTZZZZ0RDDDDBXVFEEEEEEEEEGMHZ     1YV0kdccccccccakOkkaccccccd0
+   UIIJI7EEFJL63DDDD00Z4CDDDDDDCAzzR007Z5BDDDD8UFFEEEEEEEFGMUY0YVUMGGF7kccccccaakOOgaccccccccd7
+   7VIIIUEFFKJJYRDDDDxBDDDDDDDAzyyzAT68XBDDDRZLFFFFFFFFFFGIUMLLLLJIKU0kacccccdkkgadcccccccccd7
+    1IJJMFFFGLLL8yzAAADDRTDDDzPzADDDDDDDDDCDZKGGFFFFFFGGIIIIJLMMMMUU1gacccdiOkdacccccccccccd0
+   YIJJLLLGFGJJLU4DDDACDDRDDAR3AzADDDDDDDDD4UGHKLHHHJMHHKHJIIIIJMUVWacccdkOidcccccccccccccd6
+  1GLLLLLLMVGJIII8WOOOOOOWWXX433TCxCDDDDCDD7KHJJLLLKHKGGHGHJJJIJIIYkbbcgOiccccccccccccccdd7
+ 1EGKKJHLLKLYUJIIH7cccccdcabaadgkkOOOXX3TP8LIJJIJIIMLHHHKKMLLLLIIIKYOfOOcacccccccccccccci0
+      177IIIIVYULMYgccccccccccccccccccaagk7JILJIIJJMIJIJIIJJIJJJJLKHV6lhhffeebacccccccaO0
+         VIILU11YVU7eebaccccccccccccccccca7UMGIIMJMLUUULLMJJJLUUUUUUU7ljjjjhhfffebbacg0
+          VGV1    01kfffffeeebbccccccccbbcd7KGKLUUUUY77ULLKLY7444446OljjjjjjjjjhhhffW0
+           7         0WWOifffffffffffffffffOYUUVY854SSS6YLFU822222228jjjjjjjjjjjjjO0
+                        4444W9OkihhhhhkkOWOW8742RSSSSSSS27V7S222222T0jjjjjjjlOWOW6
+                        0PSSSS9Ojjjjjjjjjjj8TSSSSSSSSSSSSS3TS222222T8OOOOOOOljl0
+                         6uPRSS3WljjjjjjjjjjW4SSSSSSSSSSSSSSS242222T6jjjjjjjOW
+                         0sqtuPRS3XWljjjjjjjj5RSSSSSRRRSSSS4T8422224WjjjjlW6
+                          0pppqttuPR36WWWOlhh5uwuuuttqtuRS28932222T6hhOZ0
+                          6nppppppsuTZ       6npppppppsuPS642222220Z0
+                          0tunpssptT0        ZnpppppppquR483223220
+                          6o8nq9Qt4Z         6pppppppptR406822846
+                          08XX085           0trQpptoptR0   645
+                                            0t8QouXqu46
+                                             06XX845
 """
 
 # Two tokens by design: the Actions GITHUB_TOKEN yields the contribution-style
@@ -252,8 +338,18 @@ def render(mode, stats):
         f'font-family="Consolas, Menlo, monospace" font-size="13px">',
         f'<rect x="0.5" y="0.5" width="839" height="499" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
     ]
-    for i, line in enumerate(ART.strip("\n").split("\n")):
-        out.append(f'<text x="25" y="{45 + i * 15}" fill="{p["art"]}" xml:space="preserve">{html.escape(line)}</text>')
+    art_rows = ART.strip("\n").split("\n")
+    color_rows = ART_COLORS.strip("\n").split("\n")
+    for i, (line, cl) in enumerate(zip(art_rows, color_rows)):
+        spans, j = [], 0
+        while j < len(line):
+            k = j
+            while k < len(line) and cl[k:k + 1] == cl[j:j + 1]:
+                k += 1
+            fill = ART_PALETTE.get(cl[j:j + 1], p["art"])
+            spans.append(f'<tspan fill="{fill}">{html.escape(line[j:k])}</tspan>')
+            j = k
+        out.append(f'<text x="25" y="{ART_Y + i * ART_LH}" font-size="{ART_FS}px" xml:space="preserve">{"".join(spans)}</text>')
     for i, segs in enumerate(info_lines(stats)):
         if not segs:
             continue
